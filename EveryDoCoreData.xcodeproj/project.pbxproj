@@ -18,6 +18,7 @@
 		2780DE0A1A811940000827EE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2780DE091A811940000827EE /* Images.xcassets */; };
 		2780DE0D1A811940000827EE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2780DE0B1A811940000827EE /* LaunchScreen.xib */; };
 		2780DE191A811940000827EE /* EveryDoCoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2780DE181A811940000827EE /* EveryDoCoreDataTests.swift */; };
+		27A443F71A8177020027F057 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A443F61A8177020027F057 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		2780DE121A811940000827EE /* EveryDoCoreDataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EveryDoCoreDataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2780DE171A811940000827EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2780DE181A811940000827EE /* EveryDoCoreDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EveryDoCoreDataTests.swift; sourceTree = "<group>"; };
+		27A443F61A8177020027F057 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				271435551A8122FC00D2B9B9 /* Task.swift */,
+				27A443F61A8177020027F057 /* User.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 				271435531A81210100D2B9B9 /* AddItemViewController.swift in Sources */,
 				2780DDFE1A811940000827EE /* AppDelegate.swift in Sources */,
 				2780DE011A811940000827EE /* EveryDoCoreData.xcdatamodeld in Sources */,
+				27A443F71A8177020027F057 /* User.swift in Sources */,
 				2780DE031A811940000827EE /* MasterViewController.swift in Sources */,
 				271435561A8122FC00D2B9B9 /* Task.swift in Sources */,
 				2780DE051A811940000827EE /* DetailViewController.swift in Sources */,
