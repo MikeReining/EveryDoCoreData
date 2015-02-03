@@ -13,29 +13,5 @@ class TaskTableViewCell: UITableViewCell {
     @IBOutlet var taskDetailLabel: UILabel!
     @IBOutlet var taskPriorityLabel: UILabel!
     @IBOutlet weak var taskNameLabel: UILabel!
-    
-    var task:Task!
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
 
-        taskNameLabel.text = task.taskName
-        taskDetailLabel.text = task.taskDetail
-        taskPriorityLabel.text = setPriorityLabel(task)
-    }
-    
-    func setPriorityLabel(task: Task) -> String {
-        switch task.taskPriority {
-        case 0:
-            return "⭐️"
-        case 1:
-            return "⭐️⭐️"
-        case 2:
-            return "⭐️⭐️⭐️"
-        default:
-            return ""
-        }
-    }
-    
-    
 }

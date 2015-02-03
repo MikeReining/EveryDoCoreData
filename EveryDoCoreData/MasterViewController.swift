@@ -74,7 +74,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             let context = self.fetchedResultsController.managedObjectContext
-            context.deleteObject(self.fetchedResultsController.objectAtIndexPath(indexPath) as NSManagedObject)
+            context.deleteObject(self.fetchedResultsController.objectAtIndexPath(indexPath) as Task)
                 
             var error: NSError? = nil
             if !context.save(&error) {
@@ -88,7 +88,23 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 
     func configureCell(cell: TaskTableViewCell, atIndexPath indexPath: NSIndexPath) {
         let newTask = self.fetchedResultsController.objectAtIndexPath(indexPath) as Task
-        cell.task = newTask
+        cell.taskNameLabel.text = newTask.taskName
+        cell.detailTextLabel?.text = newTask.taskDetail
+        cell.taskPriorityLabel.text = setPriorityLabel(newTask)
+        
+    }
+    
+    func setPriorityLabel(task: Task) -> String {
+        switch task.taskPriority {
+        case 0:
+            return "⭐️"
+        case 1:
+            return "⭐️⭐️"
+        case 2:
+            return "⭐️⭐️⭐️"
+        default:
+            return ""
+        }
     }
 
     // MARK: - Fetched results controller
@@ -152,7 +168,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
             case .Delete:
                 tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Fade)
             case .Update:
-            self.configureCell(tableView.cellForRowAtIndexPath(indexPath!) as TaskTableViewCell, atIndexPath: indexPath!)
+                self.configureCell(tableView.cellForRowAtIndexPath(indexPath!) as TaskTableViewCell, atIndexPath: indexPath!)
             case .Move:
                 tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Fade)
                 tableView.insertRowsAtIndexPaths([newIndexPath!], withRowAnimation: .Fade)
