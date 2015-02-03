@@ -120,10 +120,10 @@
             </objects>
             <point key="canvasLocation" x="709" y="-630"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Item View Controller-->
         <scene sceneID="pn7-xC-AjG">
             <objects>
-                <viewController id="Asy-Nf-PVl" sceneMemberID="viewController">
+                <viewController id="Asy-Nf-PVl" customClass="AddItemViewController" customModule="EveryDoCoreData" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ce5-og-QXO"/>
                         <viewControllerLayoutGuide type="bottom" id="hPI-nh-9uy"/>
@@ -138,13 +138,24 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="23r-pl-4NW">
+                                <rect key="frame" x="99" y="99" width="465" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="iVW-f3-cNq" firstAttribute="top" secondItem="Ce5-og-QXO" secondAttribute="bottom" constant="39" id="I51-BR-3Ub"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="23r-pl-4NW" secondAttribute="trailing" constant="20" id="MqJ-Jf-QVe"/>
                             <constraint firstItem="iVW-f3-cNq" firstAttribute="leading" secondItem="f5q-2c-GEb" secondAttribute="leadingMargin" constant="23" id="SnV-cT-IP8"/>
+                            <constraint firstItem="iVW-f3-cNq" firstAttribute="centerY" secondItem="23r-pl-4NW" secondAttribute="centerY" id="WYn-mH-dUd"/>
+                            <constraint firstItem="23r-pl-4NW" firstAttribute="leading" secondItem="iVW-f3-cNq" secondAttribute="trailing" constant="20" id="qHR-85-fOg"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="taskNameTextField" destination="23r-pl-4NW" id="1tn-zg-OiQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iOM-tC-DNr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
