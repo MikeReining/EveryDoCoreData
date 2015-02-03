@@ -133,28 +133,70 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iVW-f3-cNq">
-                                <rect key="frame" x="39" y="103" width="40" height="21"/>
+                                <rect key="frame" x="36" y="103" width="59" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="23r-pl-4NW">
-                                <rect key="frame" x="99" y="99" width="465" height="30"/>
+                                <rect key="frame" x="115" y="99" width="449" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Details:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6oB-Pv-bxI">
+                                <rect key="frame" x="36" y="154" width="59" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ATS-El-hpA">
+                                <rect key="frame" x="115" y="150" width="449" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Priority:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JtC-aL-eGD">
+                                <rect key="frame" x="36" y="208" width="59" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="N7I-DS-BLL">
+                                <rect key="frame" x="115" y="205" width="449" height="29"/>
+                                <segments>
+                                    <segment title="Low"/>
+                                    <segment title="Medium"/>
+                                    <segment title="High"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="iVW-f3-cNq" firstAttribute="top" secondItem="Ce5-og-QXO" secondAttribute="bottom" constant="39" id="I51-BR-3Ub"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="23r-pl-4NW" secondAttribute="trailing" constant="20" id="MqJ-Jf-QVe"/>
-                            <constraint firstItem="iVW-f3-cNq" firstAttribute="leading" secondItem="f5q-2c-GEb" secondAttribute="leadingMargin" constant="23" id="SnV-cT-IP8"/>
-                            <constraint firstItem="iVW-f3-cNq" firstAttribute="centerY" secondItem="23r-pl-4NW" secondAttribute="centerY" id="WYn-mH-dUd"/>
-                            <constraint firstItem="23r-pl-4NW" firstAttribute="leading" secondItem="iVW-f3-cNq" secondAttribute="trailing" constant="20" id="qHR-85-fOg"/>
+                            <constraint firstItem="6oB-Pv-bxI" firstAttribute="width" secondItem="iVW-f3-cNq" secondAttribute="width" id="1NF-HS-LvC"/>
+                            <constraint firstItem="ATS-El-hpA" firstAttribute="leading" secondItem="6oB-Pv-bxI" secondAttribute="trailing" constant="20" id="1mB-Jc-eH3"/>
+                            <constraint firstItem="N7I-DS-BLL" firstAttribute="centerY" secondItem="JtC-aL-eGD" secondAttribute="centerY" id="1mQ-fo-bZf"/>
+                            <constraint firstItem="N7I-DS-BLL" firstAttribute="leading" secondItem="JtC-aL-eGD" secondAttribute="trailing" constant="20" id="3ft-4k-NJg"/>
+                            <constraint firstItem="iVW-f3-cNq" firstAttribute="top" secondItem="Ce5-og-QXO" secondAttribute="bottom" constant="39" id="7IJ-pi-W4Z"/>
+                            <constraint firstItem="6oB-Pv-bxI" firstAttribute="width" secondItem="JtC-aL-eGD" secondAttribute="width" id="7hs-7q-DDk"/>
+                            <constraint firstItem="JtC-aL-eGD" firstAttribute="leading" secondItem="f5q-2c-GEb" secondAttribute="leadingMargin" constant="20" id="9D7-eO-IXB"/>
+                            <constraint firstItem="iVW-f3-cNq" firstAttribute="leading" secondItem="f5q-2c-GEb" secondAttribute="leadingMargin" constant="20" id="CPf-8G-2OZ"/>
+                            <constraint firstItem="iVW-f3-cNq" firstAttribute="centerY" secondItem="23r-pl-4NW" secondAttribute="centerY" id="Eki-zs-2Rl"/>
+                            <constraint firstItem="6oB-Pv-bxI" firstAttribute="leading" secondItem="f5q-2c-GEb" secondAttribute="leadingMargin" constant="20" id="KKR-iZ-Gep"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="23r-pl-4NW" secondAttribute="trailing" constant="20" id="N92-Lg-eSh"/>
+                            <constraint firstItem="JtC-aL-eGD" firstAttribute="top" secondItem="6oB-Pv-bxI" secondAttribute="bottom" constant="33" id="aAa-MY-hl6"/>
+                            <constraint firstItem="ATS-El-hpA" firstAttribute="centerY" secondItem="6oB-Pv-bxI" secondAttribute="centerY" id="evk-dT-9lD"/>
+                            <constraint firstItem="23r-pl-4NW" firstAttribute="leading" secondItem="iVW-f3-cNq" secondAttribute="trailing" constant="20" id="haW-qA-W3t"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="N7I-DS-BLL" secondAttribute="trailing" constant="20" id="izH-oV-3DA"/>
+                            <constraint firstItem="23r-pl-4NW" firstAttribute="leading" secondItem="iVW-f3-cNq" secondAttribute="trailing" constant="20" id="mXz-dQ-riq"/>
+                            <constraint firstItem="ATS-El-hpA" firstAttribute="leading" secondItem="6oB-Pv-bxI" secondAttribute="trailing" constant="20" id="s9x-cu-jZx"/>
+                            <constraint firstItem="6oB-Pv-bxI" firstAttribute="top" secondItem="iVW-f3-cNq" secondAttribute="bottom" constant="30" id="w6f-ah-lwE"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ATS-El-hpA" secondAttribute="trailing" constant="20" id="wxj-K1-2GT"/>
+                            <constraint firstItem="N7I-DS-BLL" firstAttribute="leading" secondItem="JtC-aL-eGD" secondAttribute="trailing" constant="20" id="yWa-6w-ksQ"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="taskDetailsTextField" destination="ATS-El-hpA" id="TAp-jg-sZ2"/>
                         <outlet property="taskNameTextField" destination="23r-pl-4NW" id="1tn-zg-OiQ"/>
+                        <outlet property="taskprioritySegmentedControl" destination="N7I-DS-BLL" id="XW4-f8-Ugc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iOM-tC-DNr" userLabel="First Responder" sceneMemberID="firstResponder"/>

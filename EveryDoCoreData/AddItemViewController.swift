@@ -14,6 +14,8 @@ class AddItemViewController: UIViewController {
 
     
     @IBOutlet weak var taskNameTextField: UITextField!
+    @IBOutlet weak var taskDetailsTextField: UITextField!
+    @IBOutlet weak var taskprioritySegmentedControl: UISegmentedControl!
     
     override func viewDidLoad() {
 
@@ -28,6 +30,8 @@ class AddItemViewController: UIViewController {
         let task = Task(entity: entityDescription!, insertIntoManagedObjectContext: context)
         
         task.taskName = taskNameTextField.text
+        task.taskDetail = taskDetailsTextField.text
+        task.taskPriority = taskprioritySegmentedControl.selectedSegmentIndex
 
         var error: NSError?
         
