@@ -87,8 +87,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 
     func configureCell(cell: TaskTableViewCell, atIndexPath indexPath: NSIndexPath) {
         let newTask = self.fetchedResultsController.objectAtIndexPath(indexPath) as Task
-        cell.taskNameLabel.text = newTask.taskName
-        cell.taskDetailLabel.text = newTask.taskDetail
+        cell.task = newTask
     }
 
     // MARK: - Fetched results controller

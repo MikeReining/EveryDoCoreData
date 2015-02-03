@@ -14,13 +14,13 @@ class TaskTableViewCell: UITableViewCell {
     @IBOutlet var taskPriorityLabel: UILabel!
     @IBOutlet weak var taskNameLabel: UILabel!
     
-//    var task:Task!
-//    
-//    override func layoutSubviews() {
-//        super.layoutSubviews()
-//
-//        taskNameLabel.text = task.taskName
-//        taskDetailLabel.text = task.taskDetail
-//        
-//    }
+    var task:Task!
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+
+        taskNameLabel.text = task.taskName
+        taskDetailLabel.text = task.taskDetail
+        
+    }
 }
