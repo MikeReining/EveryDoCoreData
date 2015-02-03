@@ -9,26 +9,34 @@
 import UIKit
 
 class DetailViewController: UIViewController {
+    @IBOutlet weak var taskNameLabel: UILabel!
+    @IBOutlet weak var taskDetailsLabel: UILabel!
+    @IBOutlet weak var taskPriorityLabel: UILabel!
 
-    @IBOutlet weak var detailDescriptionLabel: UILabel!
 
 
-    var detailItem: AnyObject? {
-        didSet {
-            // Update the view.
-            self.configureView()
-        }
-    }
-
+    var task: Task!
+    
+    
     func configureView() {
-        // Update the user interface for the detail item.
-        if let detail: AnyObject = self.detailItem {
-            if let label = self.detailDescriptionLabel {
-                label.text = detail.valueForKey("taskName")!.description
-            }
-        }
+        taskNameLabel.text = task.taskName
+        taskDetailsLabel.text = task.taskDetail
+        taskPriorityLabel.text = setPriorityLabel(task)
     }
 
+    func setPriorityLabel(task: Task) -> String {
+        switch task.taskPriority {
+        case 0:
+            return "⭐️"
+        case 1:
+            return "⭐️⭐️"
+        case 2:
+            return "⭐️⭐️⭐️"
+        default:
+            return ""
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
