@@ -60,7 +60,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("TaskCell", forIndexPath: indexPath) as TaskTableViewCell
         self.configureCell(cell, atIndexPath: indexPath)
         return cell
     }
@@ -85,10 +85,10 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         }
     }
 
-    func configureCell(cell: UITableViewCell, atIndexPath indexPath: NSIndexPath) {
-        let object = self.fetchedResultsController.objectAtIndexPath(indexPath) as NSManagedObject
-        cell.textLabel!.text = object.valueForKey("taskName")!.description
-        cell.detailTextLabel?.text = object.valueForKey("taskDetail")?.description
+    func configureCell(cell: TaskTableViewCell, atIndexPath indexPath: NSIndexPath) {
+        let newTask = self.fetchedResultsController.objectAtIndexPath(indexPath) as Task
+        cell.taskNameLabel.text = newTask.taskName
+        cell.taskDetailLabel.text = newTask.taskDetail
     }
 
     // MARK: - Fetched results controller
@@ -152,7 +152,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
             case .Delete:
                 tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Fade)
             case .Update:
-                self.configureCell(tableView.cellForRowAtIndexPath(indexPath!)!, atIndexPath: indexPath!)
+            self.configureCell(tableView.cellForRowAtIndexPath(indexPath!) as TaskTableViewCell, atIndexPath: indexPath!)
             case .Move:
                 tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Fade)
                 tableView.insertRowsAtIndexPaths([newIndexPath!], withRowAnimation: .Fade)

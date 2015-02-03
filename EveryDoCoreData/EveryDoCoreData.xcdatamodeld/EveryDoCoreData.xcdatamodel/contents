@@ -6,7 +6,7 @@
         </attribute>
         <userInfo/>
     </entity>
-    <entity name="Task" representedClassName="Task" syncable="YES">
+    <entity name="Task" representedClassName="EveryDoCoreData.Task" syncable="YES">
         <attribute name="dueDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="taskDetail" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="taskName" optional="YES" attributeType="String" syncable="YES"/>
@@ -14,6 +14,6 @@
     </entity>
     <elements>
         <element name="Event" positionX="261" positionY="189" width="128" height="60"/>
-        <element name="Task" positionX="261" positionY="198" width="128" height="103"/>
+        <element name="Task" positionX="261" positionY="198" width="128" height="105"/>
     </elements>
 </model>
