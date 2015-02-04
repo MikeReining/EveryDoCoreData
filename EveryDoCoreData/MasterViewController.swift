@@ -27,6 +27,8 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.navigationItem.leftBarButtonItem = self.editButtonItem()
+        self.navigationController?.setToolbarHidden(false, animated: true)
+
     }
 
     override func didReceiveMemoryWarning() {

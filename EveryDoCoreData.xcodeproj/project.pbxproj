@@ -18,6 +18,7 @@
 		2780DE0A1A811940000827EE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2780DE091A811940000827EE /* Images.xcassets */; };
 		2780DE0D1A811940000827EE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2780DE0B1A811940000827EE /* LaunchScreen.xib */; };
 		2780DE191A811940000827EE /* EveryDoCoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2780DE181A811940000827EE /* EveryDoCoreDataTests.swift */; };
+		279229CB1A81E45A009A9895 /* FilterByUserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279229CA1A81E45A009A9895 /* FilterByUserTableViewController.swift */; };
 		27A443F71A8177020027F057 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A443F61A8177020027F057 /* User.swift */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,7 @@
 		2780DE121A811940000827EE /* EveryDoCoreDataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EveryDoCoreDataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2780DE171A811940000827EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2780DE181A811940000827EE /* EveryDoCoreDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EveryDoCoreDataTests.swift; sourceTree = "<group>"; };
+		279229CA1A81E45A009A9895 /* FilterByUserTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterByUserTableViewController.swift; sourceTree = "<group>"; };
 		27A443F61A8177020027F057 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -74,6 +76,7 @@
 				271435521A81210100D2B9B9 /* AddItemViewController.swift */,
 				2780DE041A811940000827EE /* DetailViewController.swift */,
 				2780DE021A811940000827EE /* MasterViewController.swift */,
+				279229CA1A81E45A009A9895 /* FilterByUserTableViewController.swift */,
 				271435581A81293D00D2B9B9 /* TaskTableViewCell.swift */,
 			);
 			name = ViewControllers;
@@ -248,6 +251,7 @@
 			files = (
 				271435591A81293D00D2B9B9 /* TaskTableViewCell.swift in Sources */,
 				271435531A81210100D2B9B9 /* AddItemViewController.swift in Sources */,
+				279229CB1A81E45A009A9895 /* FilterByUserTableViewController.swift in Sources */,
 				2780DDFE1A811940000827EE /* AppDelegate.swift in Sources */,
 				2780DE011A811940000827EE /* EveryDoCoreData.xcdatamodeld in Sources */,
 				27A443F71A8177020027F057 /* User.swift in Sources */,

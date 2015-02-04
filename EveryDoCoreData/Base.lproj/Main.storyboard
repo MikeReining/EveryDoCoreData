@@ -199,6 +199,13 @@
                             <outlet property="delegate" destination="7bK-jq-Zjz" id="RA6-mI-bju"/>
                         </connections>
                     </tableView>
+                    <toolbarItems>
+                        <barButtonItem title="Filter by user" id="RL3-ZH-7At">
+                            <connections>
+                                <segue destination="jz3-cI-TkZ" kind="show" id="MCI-PL-8It"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" title="To-Do List" id="Zdf-7t-Un8">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="QXQ-JU-NHL">
                             <connections>
@@ -206,10 +213,54 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="709" y="-630"/>
+        </scene>
+        <!--Filter by User-->
+        <scene sceneID="M2n-5q-pEA">
+            <objects>
+                <tableViewController id="r0L-Dr-aHI" customClass="FilterByUserTableViewController" customModule="EveryDoCoreData" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Q7F-93-bIz">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="FilterByUserCell" id="8Yw-gs-BQH">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8Yw-gs-BQH" id="bCw-Q4-9eX">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="r0L-Dr-aHI" id="Jn9-nB-dFd"/>
+                            <outlet property="delegate" destination="r0L-Dr-aHI" id="e7L-GC-cla"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Filter by User" id="UDr-LU-Mx1"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kSE-ke-2LR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1247" y="-1509"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Mf5-xj-iNG">
+            <objects>
+                <navigationController id="jz3-cI-TkZ" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="59r-oe-ggQ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="r0L-Dr-aHI" kind="relationship" relationship="rootViewController" id="ty1-FB-JGb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="huw-lz-sJc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="427" y="-1509"/>
         </scene>
         <!--Add Item View Controller-->
         <scene sceneID="pn7-xC-AjG">
