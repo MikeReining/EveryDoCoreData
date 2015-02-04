@@ -13,5 +13,6 @@ class TaskTableViewCell: UITableViewCell {
     @IBOutlet var taskDetailLabel: UILabel!
     @IBOutlet var taskPriorityLabel: UILabel!
     @IBOutlet weak var taskNameLabel: UILabel!
+    @IBOutlet weak var taskOwnerLabel: UILabel!
 
 }

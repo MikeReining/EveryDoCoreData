@@ -17,6 +17,8 @@ class AddItemViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBOutlet weak var taskNameTextField: UITextField!
     @IBOutlet weak var taskDetailsTextField: UITextField!
     @IBOutlet weak var taskprioritySegmentedControl: UISegmentedControl!
+    var selectedUser: User?
+    var lastSelectedIndexPath: NSIndexPath?
     
     // Add new users to Core data
     @IBAction func addUserButtonPressed(sender: AnyObject) {
@@ -85,6 +87,10 @@ class AddItemViewController: UIViewController, UITableViewDataSource, UITableVie
         task.taskName = taskNameTextField.text
         task.taskDetail = taskDetailsTextField.text
         task.taskPriority = taskprioritySegmentedControl.selectedSegmentIndex
+        if selectedUser != nil {
+            task.userRel = selectedUser!
+        }
+        println(selectedUser?.userName)
 
         var error: NSError?
         
@@ -113,6 +119,7 @@ class AddItemViewController: UIViewController, UITableViewDataSource, UITableVie
         -> UITableViewCell {
             let cell = tableView.dequeueReusableCellWithIdentifier("UserCell", forIndexPath: indexPath) as UITableViewCell
             self.configureCell(cell, atIndexPath: indexPath)
+            cell.accessoryType = (lastSelectedIndexPath?.row == indexPath.row) ? .Checkmark : .None
             return cell
     }
     
@@ -122,6 +129,7 @@ class AddItemViewController: UIViewController, UITableViewDataSource, UITableVie
         atIndexPath indexPath: NSIndexPath) {
             let user = self.fetchedResultsController.objectAtIndexPath(indexPath) as User
             cell.textLabel?.text = user.userName
+            
     }
     
     //MARK: Table View Swipe to Delete
@@ -146,6 +154,27 @@ class AddItemViewController: UIViewController, UITableViewDataSource, UITableVie
         }
     }
 
+    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        let user = self.fetchedResultsController.objectAtIndexPath(indexPath) as User
+        selectedUser = nil
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let user = self.fetchedResultsController.objectAtIndexPath(indexPath) as User
+        selectedUser = user
+        if indexPath.row != lastSelectedIndexPath?.row {
+            if let lastSelectedIndexPath = lastSelectedIndexPath {
+                let oldCell = tableView.cellForRowAtIndexPath(lastSelectedIndexPath)
+                oldCell?.accessoryType = .None
+            }
+            
+            let newCell = tableView.cellForRowAtIndexPath(indexPath)
+            newCell?.accessoryType = .Checkmark
+            
+            lastSelectedIndexPath = indexPath
+        }
+        
+    }
     
     //MARK: NSFetchResultsControllerDelegate
     

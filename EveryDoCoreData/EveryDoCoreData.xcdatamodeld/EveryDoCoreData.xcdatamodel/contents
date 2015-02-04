@@ -11,11 +11,11 @@
         <attribute name="taskDetail" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="taskName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="taskPriority" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <relationship name="assignedTo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="userTask" inverseEntity="User" syncable="YES"/>
+        <relationship name="userRel" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="userTask" inverseEntity="User" syncable="YES"/>
     </entity>
     <entity name="User" representedClassName="EveryDoCoreData.User" syncable="YES">
         <attribute name="userName" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="userTask" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Task" inverseName="assignedTo" inverseEntity="Task" syncable="YES"/>
+        <relationship name="userTask" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Task" inverseName="userRel" inverseEntity="Task" syncable="YES"/>
     </entity>
     <elements>
         <element name="Event" positionX="261" positionY="189" width="128" height="58"/>

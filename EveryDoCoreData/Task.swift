@@ -15,5 +15,6 @@ class Task: NSManagedObject {
     @NSManaged var taskDetail: String
     @NSManaged var taskPriority: NSNumber
     @NSManaged var dueDate: NSDate
+    @NSManaged var userRel: User
 
 }

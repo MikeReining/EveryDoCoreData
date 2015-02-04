@@ -91,6 +91,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         cell.taskNameLabel.text = newTask.taskName
         cell.detailTextLabel?.text = newTask.taskDetail
         cell.taskPriorityLabel.text = setPriorityLabel(newTask)
+        cell.taskOwnerLabel.text = newTask.userRel.userName
         
     }
     
