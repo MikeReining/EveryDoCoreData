@@ -20,11 +20,8 @@ class AddItemViewController: UIViewController, UITableViewDataSource, UITableVie
     var selectedUser: User?
     var lastSelectedIndexPath: NSIndexPath?
     
-    // Add new users to Core data
+    //MARK: Add user AlertAction
     @IBAction func addUserButtonPressed(sender: AnyObject) {
-
-        
-        
         var alert = UIAlertController(title: "Add user", message: "Please add a user name", preferredStyle: .Alert)
         
         let saveAction = UIAlertAction(title: "Save", style: .Default) { (action: UIAlertAction!) -> Void in
@@ -57,6 +54,8 @@ class AddItemViewController: UIViewController, UITableViewDataSource, UITableVie
         presentViewController(alert, animated: true, completion: nil)
         
     }
+    
+    //MARK: ViewController Functions
     override func viewDidLoad() {
         self.navigationController?.setToolbarHidden(false, animated: true)
     }
@@ -79,27 +78,29 @@ class AddItemViewController: UIViewController, UITableViewDataSource, UITableVie
     
     override func viewWillDisappear(animated: Bool) {
         // Get reference to app delegate and use it to get managedObjectContext
-        let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
-        let context = appDelegate.managedObjectContext
-        let entityDescription = NSEntityDescription.entityForName("Task", inManagedObjectContext: context!)
-        let task = Task(entity: entityDescription!, insertIntoManagedObjectContext: context)
-        
-        task.taskName = taskNameTextField.text
-        task.taskDetail = taskDetailsTextField.text
-        task.taskPriority = taskprioritySegmentedControl.selectedSegmentIndex
-        if selectedUser != nil {
-            task.userRel = selectedUser!
-        }
-        println(selectedUser?.userName)
+        if taskNameTextField.text != "" {
+            let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+            let context = appDelegate.managedObjectContext
+            let entityDescription = NSEntityDescription.entityForName("Task", inManagedObjectContext: context!)
+            let task = Task(entity: entityDescription!, insertIntoManagedObjectContext: context)
+            task.taskName = taskNameTextField.text
+            task.taskDetail = taskDetailsTextField.text
+            task.taskPriority = taskprioritySegmentedControl.selectedSegmentIndex
+            if selectedUser != nil {
+                task.userRel = selectedUser!
+            } else {
+                task.userRel = nil
+            }
 
-        var error: NSError?
-        
-        context?.save(&error)
-        
-        if let err = error {
-            println(err.localizedFailureReason)
-        } else {
-            taskNameTextField.text = ""
+            var error: NSError?
+            
+            context?.save(&error)
+            
+            if let err = error {
+                println(err.localizedFailureReason)
+            } else {
+                taskNameTextField.text = ""
+            }
         }
     }
 
