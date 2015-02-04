@@ -19,6 +19,7 @@
 		2780DE0D1A811940000827EE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2780DE0B1A811940000827EE /* LaunchScreen.xib */; };
 		2780DE191A811940000827EE /* EveryDoCoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2780DE181A811940000827EE /* EveryDoCoreDataTests.swift */; };
 		279229CB1A81E45A009A9895 /* FilterByUserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279229CA1A81E45A009A9895 /* FilterByUserTableViewController.swift */; };
+		279229CD1A81E9A2009A9895 /* ShowFilteredTasksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279229CC1A81E9A2009A9895 /* ShowFilteredTasksTableViewController.swift */; };
 		27A443F71A8177020027F057 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A443F61A8177020027F057 /* User.swift */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,7 @@
 		2780DE171A811940000827EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2780DE181A811940000827EE /* EveryDoCoreDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EveryDoCoreDataTests.swift; sourceTree = "<group>"; };
 		279229CA1A81E45A009A9895 /* FilterByUserTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterByUserTableViewController.swift; sourceTree = "<group>"; };
+		279229CC1A81E9A2009A9895 /* ShowFilteredTasksTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowFilteredTasksTableViewController.swift; sourceTree = "<group>"; };
 		27A443F61A8177020027F057 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -77,6 +79,7 @@
 				2780DE041A811940000827EE /* DetailViewController.swift */,
 				2780DE021A811940000827EE /* MasterViewController.swift */,
 				279229CA1A81E45A009A9895 /* FilterByUserTableViewController.swift */,
+				279229CC1A81E9A2009A9895 /* ShowFilteredTasksTableViewController.swift */,
 				271435581A81293D00D2B9B9 /* TaskTableViewCell.swift */,
 			);
 			name = ViewControllers;
@@ -257,6 +260,7 @@
 				27A443F71A8177020027F057 /* User.swift in Sources */,
 				2780DE031A811940000827EE /* MasterViewController.swift in Sources */,
 				271435561A8122FC00D2B9B9 /* Task.swift in Sources */,
+				279229CD1A81E9A2009A9895 /* ShowFilteredTasksTableViewController.swift in Sources */,
 				2780DE051A811940000827EE /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

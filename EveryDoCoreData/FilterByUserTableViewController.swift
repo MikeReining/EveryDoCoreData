@@ -76,6 +76,7 @@ class FilterByUserTableViewController: UITableViewController, NSFetchedResultsCo
             
     }
     
+    
     override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
         let user = self.fetchedResultsController.objectAtIndexPath(indexPath) as User
     }
