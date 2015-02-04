@@ -13,7 +13,6 @@ class FilterByUserTableViewController: UITableViewController, NSFetchedResultsCo
     let context = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext
     var users = [NSManagedObject]()
     var lastSelectedIndexPath: NSIndexPath?
-    var filteredByUser: User?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -92,11 +91,8 @@ class FilterByUserTableViewController: UITableViewController, NSFetchedResultsCo
             let newCell = tableView.cellForRowAtIndexPath(indexPath)
             newCell?.accessoryType = .Checkmark
             
-            
             lastSelectedIndexPath = indexPath
         }
-        filteredByUser = user
-        
     }
     
     //MARK: NSFetchResultsControllerDelegate
@@ -178,4 +174,14 @@ class FilterByUserTableViewController: UITableViewController, NSFetchedResultsCo
     func controllerDidChangeContent(controller: NSFetchedResultsController) {
         self.tableView.endUpdates()
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showFilteredResults" {
+            let newVC = segue.destinationViewController as ShowFilteredTasksTableViewController
+            let indexPath = tableView.indexPathForSelectedRow()
+            let user = users[indexPath!.row] as User
+            newVC.user = user
+        }
+    }
+    
 }

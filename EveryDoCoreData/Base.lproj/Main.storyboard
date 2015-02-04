@@ -249,10 +249,10 @@
             </objects>
             <point key="canvasLocation" x="1247" y="-1509"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Show Filtered Tasks Table View Controller-->
         <scene sceneID="B3f-r5-zsR">
             <objects>
-                <tableViewController id="LjH-FP-TFV" sceneMemberID="viewController">
+                <tableViewController id="LjH-FP-TFV" customClass="ShowFilteredTasksTableViewController" customModule="EveryDoCoreData" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="VIn-SQ-ozd">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
